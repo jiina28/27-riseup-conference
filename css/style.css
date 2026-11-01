@@ -1,0 +1,33 @@
+/* css/style.css */
+
+/* 기본 Pretendard 폰트 우선 적용 */
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    word-break: keep-all;
+    /* 모바일에서 한글 단어 단위 끊김 방지 */
+}
+
+/* 부드러운 스크롤 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 타임테이블 탭 버튼 활성화 스타일 */
+.tab-btn.active {
+    background-color: #ffffff;
+    color: #6a0607;
+    /* amber-600 */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 입력창 커스텀 Focus 스타일 */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* 화면 전체에 부드러운 스크롤 적용 */
+html {
+    scroll-behavior: smooth;
+}
