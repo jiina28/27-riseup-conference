@@ -31,3 +31,41 @@ textarea:focus {
 html {
     scroll-behavior: smooth;
 }
+
+
+/* countdown */
+.countdown-sep {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    line-height: 1.3;
+    opacity: 0.5;
+}
+
+.countdown-unit {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-num {
+    font-size: 20px !important;
+    line-height: 0.95;
+}
+
+.countdown-num.tick {
+    animation: tick 0.35s cubic-bezier(.2, .8, .2, 1);
+}
+
+.countdown-lbl {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.countdown-label {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.75;
+    margin-bottom: 2px;
+}

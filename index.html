@@ -14,7 +14,13 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
+    <style>
+        .font-times {
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
     <script src="./js/main.js" defer></script>
+
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased font-sans pb-24">
@@ -25,33 +31,53 @@
                 <img src="./img/logo.png" alt="수련회 로고" class="h-[50px] object-contain">
             </a>
         </div>
+
     </header>
 
     <!--Hero Section-->
     <section id="hero"
-        class="relative bg-cover bg-center bg-no-repeat text-white px-4 pt-20 pb-14 text-center overflow-hidden bg-[url('./img/background.png')]">
+        class="relative bg-cover bg-center bg-no-repeat text-white px-5 pt-20 pb-14 overflow-hidden bg-[url('./img/background.png')]">
+        <div class="absolute inset-0 bg-black/40 backdrop-brightness-95 pointer-events-none"></div>
 
-        <!-- 오버레이 레이어 (전체적인 텍스트 가독성 확보) -->
-        <div class="absolute inset-0 bg-black/35 backdrop-brightness-95 pointer-events-none"></div>
-
-        <!-- 히어로 내부 콘텐츠 -->
         <div class="relative z-10 max-w-md mx-auto">
-            <div
+            <!-- <div
                 class="inline-block bg-rose-950/50 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider text-rose-100 mb-4 border border-rose-400/20 shadow-sm">
                 2027 다음세대 연합수련회
+            </div> -->
+            <div class="flex items-center justify-between gap-4 mb-6">
+                <div class="text-left flex-1">
+                    <h1
+                        class="font-times text-2xl sm:text-3xl font-extrabold tracking-tight mb-2 leading-tight drop-shadow-md">
+                        Nothing, <br />
+                        But the Blood of Jesus<br />
+                    </h1>
+
+                </div>
+
+                <div class="bg-black/30 backdrop-blur-md px-3 py-3 text-right shrink-0 shadow-inner">
+                    <p class="countdown-label" id="cd-label">D-Day까지</p>
+                    <div class="flex gap-1.5 font-extrabold">
+
+                        <div class="countdown-unit">
+                            <span class="countdown-num tick" id="cd-days">00</span>
+                            <span class="countdown-lbl">일</span>
+                        </div>
+                        <span class="countdown-sep">·</span>
+                        <div class="countdown-unit">
+                            <span class="countdown-num tick" id="cd-hours">00</span>
+                            <span class="countdown-lbl">시</span>
+                        </div>
+                        <span class="countdown-sep">·</span>
+                        <div class="countdown-unit">
+                            <span class="countdown-num tick" id="cd-mins">00</span>
+                            <span class="countdown-lbl">분</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <h1 class="text-3xl font-extrabold tracking-tight mb-3 leading-tight drop-shadow-md">
-                제목<br />
-                <span class="text-rose-200 drop-shadow-sm">오직 예수, 오직 보혈</span>
-            </h1>
-
-            <p class="text-xs text-rose-100/90 leading-relaxed max-w-xs mx-auto mb-6 font-medium drop-shadow">
-                그가 빛 가운데 계신 것 같이 우리도 빛 가운데 행하면
-                <br />우리가 서로 사귐이 있고 그 아들 예수의 피가
-                <br />우리를 모든 죄에서 깨끗하게 하실 것이요 <span class="text-rose-200 font-bold">(요일 1:7)</span>
-            </p>
-
+            <!-- 하단 정보 카드 (날짜, 장소, 대상) -->
             <div
                 class="bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/15 text-left space-y-2 text-xs shadow-inner">
                 <div class="flex items-center gap-2.5">
@@ -67,22 +93,22 @@
                     <span class="font-medium">중, 고등학생, 대학생, 청년, 교사</span>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- 2. 아래쪽 상세 콘텐츠 섹션들 (기존처럼 max-w-md와 좌우 패딩 적용) -->
     <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
-        <!-- 안내, 프로그램, 접수, FAQ 섹션들이 이 아래로 들어갑니다 -->
-        <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
-        </main>
-
         <!-- 강사 소개-->
         <!--강사 및 출연진 소개 넣기-->
+        <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
+
+        </main>
+
 
         <!-- Program Section -->
         <section id="program" class="scroll-mt-16 space-y-4">
             <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <i data-lucide="clock" class="w-5 h-5 text-amber-600"></i>
+                <i data-lucide="clock" class="w-5 h-5 text-[#6a0607]"></i>
                 타임테이블
             </h2>
 
@@ -108,7 +134,7 @@
         <!-- Notice Section -->
         <section id="notice" class="scroll-mt-16 space-y-4">
             <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <i data-lucide="info" class="w-5 h-5 text-amber-600"></i>
+                <i data-lucide="info" class="w-5 h-5 text-[#6a0607]"></i>
                 등록 안내
             </h2>
 
@@ -191,7 +217,7 @@
         <section id="register" class="scroll-mt-16 space-y-4">
             <div class="bg-rose-50 border border-rose-200/60 p-4 ">
                 <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                    <i data-lucide="edit-3" class="w-5 h-5 text-rose-600"></i>
+                    <i data-lucide="edit-3" class="w-5 h-5 text-[#6a0607]"></i>
                     수련회 참가 신청서
                 </h2>
                 <p class="text-xs text-slate-600 mt-1">개인 또는 단체 유형에 맞게 신청서를 입력해 주세요.</p>
@@ -334,7 +360,7 @@
         <!-- map section-->
         <section id="map" class="scroll-mt-16 space-y-4">
             <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <i data-lucide="map" class="w-5 h-5 text-amber-600"></i>
+                <i data-lucide="map" class="w-5 h-5 text-[#6a0607]"></i>
                 오시는 길
             </h2>
             <div class="w-full h-48  border border-slate-200 overflow-hidden shadow-inner mb-2.5">
@@ -361,7 +387,7 @@
         <!-- FAQ Section -->
         <section id="faq" class="scroll-mt-16 space-y-4">
             <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <i data-lucide="help-circle" class="w-5 h-5 text-amber-600"></i>
+                <i data-lucide="help-circle" class="w-5 h-5 text-[#6a0607]"></i>
                 자주 묻는 질문 (FAQ)
             </h2>
 

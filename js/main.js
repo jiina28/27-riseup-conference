@@ -1,5 +1,42 @@
 // js/main.js
 
+// D-Day 실시간 카운트다운 기능
+function updateCountdown() {
+    // 수련회 시작 일시: 2027년 2월 17일 00:00:00
+    const targetDate = new Date('2027-02-17T00:00:00');
+    const now = new Date();
+    const diff = targetDate - now;
+
+    const daysEl = document.getElementById('cd-days');
+    const hoursEl = document.getElementById('cd-hours');
+    const minsEl = document.getElementById('cd-mins');
+    const labelEl = document.getElementById('cd-label');
+
+    if (!daysEl || !hoursEl || !minsEl) return;
+
+    if (diff <= 0) {
+        // 수련회가 이미 시작되었거나 지난 경우
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minsEl.textContent = '00';
+        if (labelEl) labelEl.textContent = '수련회가 은혜리에 진행 중입니다! 🔥';
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    // 두 자리 숫자로 표시 (예: 9 -> 09)
+    daysEl.textContent = String(days).padStart(2, '0');
+    hoursEl.textContent = String(hours).padStart(2, '0');
+    minsEl.textContent = String(mins).padStart(2, '0');
+}
+
+// 페이지 로드 시 즉시 실행 및 1초마다 갱신
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 // 등록 방법 탭 전환 기능
 const regTabBtns = document.querySelectorAll('.reg-tab-btn');
 const regContents = document.querySelectorAll('.reg-content');
