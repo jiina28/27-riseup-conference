@@ -32,8 +32,50 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Hero Section */
+.hero-top {
+    flex-direction: row !important;
+    gap: 10px !important;
+    padding-top: 20px !important;
+    align-items: flex-start;
+
+}
+
+.hero-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.mob-org {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    opacity: 0.7;
+}
+
 
 /* countdown */
+
+@keyframes tick {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-4px);
+        /* 위로 살짝 뜸 */
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .countdown-sep {
     display: block;
     font-family: 'Bebas Neue', sans-serif;
@@ -55,6 +97,7 @@ html {
 }
 
 .countdown-num.tick {
+    display: inline-block;
     animation: tick 0.35s cubic-bezier(.2, .8, .2, 1);
 }
 

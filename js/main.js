@@ -159,15 +159,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let html = '';
         timetableData[dayKey].forEach(item => {
+            const isHighlight = item.title.includes('Session');
+
             html += `
-                <div class="flex items-start gap-3 p-2.5 bg-slate-50 border border-slate-100">
-                    <span class="text-xs font-bold text-[#6a0607] bg-[#ffffff] px-2 py-0.5  shrink-0">${item.time}</span>
-                    <div>
-                        <p class="text-xs font-bold text-slate-800">${item.title}</p>
-                        ${item.desc ? `<p class="text-[11px] text-slate-500">${item.desc}</p>` : ''}
-                    </div>
+            <div class="flex items-start gap-3 p-2.5 rounded-lg border transition-all ${isHighlight
+                    ? 'bg-[#451919] border-[#451919] text-white shadow-sm'
+                    : 'bg-slate-50 border-slate-100 text-slate-800'
+                }">
+                <!-- 시간 뱃지 -->
+                <span class="text-xs font-bold px-2 py-0.5 rounded shrink-0 ${isHighlight ? 'bg-white text-[#6a0607]' : 'bg-white text-[#6a0607] border border-slate-200'
+                }">
+                    ${item.time}
+                </span>
+
+                <!-- 제목 및 설명 -->
+                <div>
+                    <p class="text-xs font-bold ${isHighlight ? 'text-white ' : 'text-slate-800'}">
+                        ${item.title}
+                    </p>
+                    ${item.desc ? `<p class="text-[11px] mt-0.5 ${isHighlight ? 'text-white' : 'text-slate-500'}">${item.desc}</p>` : ''}
                 </div>
-            `;
+            </div>
+        `;
         });
         container.innerHTML = html;
     });
