@@ -7,17 +7,10 @@ body {
     /* 모바일에서 한글 단어 단위 끊김 방지 */
 }
 
+
 /* 부드러운 스크롤 */
 html {
     scroll-behavior: smooth;
-}
-
-/* 타임테이블 탭 버튼 활성화 스타일 */
-.tab-btn.active {
-    background-color: #ffffff;
-    color: #6a0607;
-    /* amber-600 */
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* 입력창 커스텀 Focus 스타일 */
@@ -111,4 +104,71 @@ html {
     font-weight: 600;
     opacity: 0.75;
     margin-bottom: 2px;
+}
+
+/* speakers section */
+.speaker-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 9rem;
+    scroll-snap-align: center;
+}
+
+.speaker-img {
+    width: 9rem;
+    height: 6rem;
+    overflow: hidden;
+    margin-bottom: 0.625rem;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+/* timetable */
+.n-heading {
+    font-family: var(--font);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.n-heading .accent {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.n-seg {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    border: 1.5px solid #6a0607;
+    margin-bottom: 13px;
+    max-width: 560px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6a0607;
+    background: #ffffff;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.tab-btn.active {
+    background-color: #6a0607;
+    color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }

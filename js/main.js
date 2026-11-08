@@ -37,26 +37,26 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// 등록 방법 탭 전환 기능
-const regTabBtns = document.querySelectorAll('.reg-tab-btn');
-const regContents = document.querySelectorAll('.reg-content');
+// 강사 섹션 탭 전환 로직
+const speakerTabBtns = document.querySelectorAll('.speaker-tab-btn');
+const speakerTabContents = document.querySelectorAll('.speaker-tab-content');
 
-regTabBtns.forEach(btn => {
+speakerTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const targetId = btn.getAttribute('data-target');
 
-        // 모든 버튼 스타일 초기화 (비활성 상태로)
-        regTabBtns.forEach(b => {
-            b.classList.remove('bg-[#6a0607]', 'text-white', 'shadow-sm');
-            b.classList.add('bg-slate-100', 'text-slate-600', 'hover:bg-slate-200');
+        // 모든 버튼 활성화 상태 해제
+        speakerTabBtns.forEach(b => {
+            b.classList.remove('active', 'bg-white', 'text-[#6a0607]', 'shadow-sm');
+            b.classList.add('text-slate-500');
         });
 
-        // 클릭한 버튼만 활성 상태(로즈 레드)로 변경
-        btn.classList.remove('bg-slate-100', 'text-slate-600', 'hover:bg-slate-200');
-        btn.classList.add('bg-[#6a0607]', 'text-white', 'shadow-sm');
+        // 클릭된 버튼 활성화
+        btn.classList.add('active', 'bg-white', 'text-[#6a0607]', 'shadow-sm');
+        btn.classList.remove('text-slate-500');
 
-        // 해당 컨텐츠만 보여주고 나머지는 숨김
-        regContents.forEach(content => {
+        // 모든 컨텐츠 숨기기 및 선택된 컨텐츠만 표시
+        speakerTabContents.forEach(content => {
             if (content.id === targetId) {
                 content.classList.remove('hidden');
             } else {
@@ -65,6 +65,7 @@ regTabBtns.forEach(btn => {
         });
     });
 });
+
 
 // 타임테이블 데이터 구조 정의
 const timetableData = {
@@ -95,6 +96,36 @@ const timetableData = {
         { time: "19:00", title: "Session 6", desc: "아가파오, 김무열 목사" }
     ]
 };
+
+
+// 등록 방법 탭 전환 기능
+const regTabBtns = document.querySelectorAll('.reg-tab-btn');
+const regContents = document.querySelectorAll('.reg-content');
+
+regTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+
+        // 모든 버튼 스타일 초기화 (비활성 상태로)
+        regTabBtns.forEach(b => {
+            b.classList.remove('bg-[#6a0607]', 'text-white', 'shadow-sm');
+            b.classList.add('bg-slate-100', 'text-slate-600', 'hover:bg-slate-200');
+        });
+
+        // 클릭한 버튼만 활성 상태(로즈 레드)로 변경
+        btn.classList.remove('bg-slate-100', 'text-slate-600', 'hover:bg-slate-200');
+        btn.classList.add('bg-[#6a0607]', 'text-white', 'shadow-sm');
+
+        // 해당 컨텐츠만 보여주고 나머지는 숨김
+        regContents.forEach(content => {
+            if (content.id === targetId) {
+                content.classList.remove('hidden');
+            } else {
+                content.classList.add('hidden');
+            }
+        });
+    });
+});
 
 // 날짜별 참가비 및 안내 문구 자동 렌더링 함수
 function renderDynamicFee() {
@@ -249,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 1. 신청서 폼 탭 전환 기능 (개인 vs 단체)
+    // 신청서 폼 탭 전환 기능 (개인 vs 단체)
     const formTabBtns = document.querySelectorAll('.form-tab-btn');
     const formContents = document.querySelectorAll('.form-content');
 

@@ -12,6 +12,10 @@
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
@@ -23,7 +27,7 @@
 
 </head>
 
-<body class="bg-slate-50 text-slate-800 antialiased font-sans pb-24">
+<body class="bg-white text-slate-800 antialiased font-sans pb-24">
     <header
         class="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-black/60 to-transparent transition-all duration-300">
         <div class=" mx-auto px-4 h-14 flex items-center justify-between">
@@ -35,30 +39,24 @@
 
     <!--Hero Section-->
     <section id="hero"
-        class="relative bg-cover bg-center bg-no-repeat text-white px-5 pt-20 pb-14 overflow-hidden bg-[url('./img/background.png')]">
+        class="relative bg-cover bg-center bg-no-repeat text-white px-5 pt-10 pb-14 overflow-hidden bg-[url('./img/background.png')]">
         <div class="absolute inset-0 bg-black/40 backdrop-brightness-95 pointer-events-none"></div>
-        <div class="hero-top flex items-center justify-between">
-
-            <div class="hero-info">
-                <p class="mob-org">2027.02.17(수)-19(금)<br>in 포항 동부교회</p>
-            </div>
-            <div class="backdrop-blur-md px-3 py-3 text-right shrink-0 shadow-inner ">
-                <p class="countdown-label" id="cd-label">D-Day까지</p>
-                <div class="flex gap-1.5 font-extrabold justify-end">
-                    <div class="countdown-unit">
-                        <span class="countdown-num tick" id="cd-days">00</span>
-                        <span class="countdown-lbl">일</span>
-                    </div>
-                    <span class="countdown-sep">·</span>
-                    <div class="countdown-unit">
-                        <span class="countdown-num tick" id="cd-hours">00</span>
-                        <span class="countdown-lbl">시</span>
-                    </div>
-                    <span class="countdown-sep">·</span>
-                    <div class="countdown-unit">
-                        <span class="countdown-num tick" id="cd-mins">00</span>
-                        <span class="countdown-lbl">분</span>
-                    </div>
+        <div class="backdrop-blur-md px-3 py-3 text-right shrink-0 shadow-inner ">
+            <p class="countdown-label" id="cd-label">D-Day까지</p>
+            <div class="flex gap-1.5 font-extrabold justify-end">
+                <div class="countdown-unit">
+                    <span class="countdown-num tick" id="cd-days">00</span>
+                    <span class="countdown-lbl">일</span>
+                </div>
+                <span class="countdown-sep">·</span>
+                <div class="countdown-unit">
+                    <span class="countdown-num tick" id="cd-hours">00</span>
+                    <span class="countdown-lbl">시</span>
+                </div>
+                <span class="countdown-sep">·</span>
+                <div class="countdown-unit">
+                    <span class="countdown-num tick" id="cd-mins">00</span>
+                    <span class="countdown-lbl">분</span>
                 </div>
             </div>
         </div>
@@ -68,44 +66,160 @@
             <div class="flex items-center justify-between gap-4 mb-6">
                 <div class="text-left flex-1">
                     <h1
-                        class="font-times text-3xl sm:text-5xl font-extrabold tracking-tight mb-2 leading-tight drop-shadow-md">
+                        class="font-times text-4xl sm:text-5xl font-extrabold tracking-tight mb-2 leading-tight drop-shadow-md">
                         Nothing, <br />But the Blood of Jesus<br />
                     </h1>
                 </div>
             </div>
-            <p class="text-[10px] sm:text-[12px] text-rose-100/90 leading-relaxed  text-left font-medium">
-                그가 빛 가운데 계신 것 같이 우리도 빛 가운데 행하면
-                <br />우리가 서로 사귐이 있고 그 아들 예수의 피가
-                <br />우리를 모든 죄에서 깨끗하게 하실 것이요 <span class="text-rose-200 font-bold">(요일 1:7)</span>
-            </p>
+            <div class="hero-info">
+                <p class="mob-org">2027.02.17(수)-19(금)<br>in 포항 동부교회</p>
+            </div>
 
         </div>
     </section>
 
-    <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
-        <!-- 강사 소개-->
-        <!--강사 및 출연진 소개 넣기-->
-        <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
 
-        </main>
+    <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
+        <!-- Speaker / Leader Section -->
+        <section id="speakers" class="scroll-mt-16 space-y-4">
+            <h2 class="n-heading">
+                <span class="accent">LINE UP</span>
+                섬기는 이
+            </h2>
+
+            <div class="block">
+                <!-- Category Toggle Tabs -->
+                <div class="n-seg">
+                    <button
+                        class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold transition-all active bg-[#6a0607] text-white shadow-sm"
+                        data-target="messenger">Messenger</button>
+                    <button class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
+                        data-target="worship">Worship</button>
+                    <button class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
+                        data-target="artist">Artist</button>
+                    <button class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
+                        data-target="special">Special</button>
+                </div>
+
+                <div id="messenger"
+                    class="speaker-tab-content flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 scrollbar-none">
+                    <div class="speaker-unit">
+                        <div class="speaker-img ">
+                            <img src="./img/김무열 목사님.png" alt="김무열 목사" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">김무열 목사</span>
+                        <span class="text-[11px] text-slate-500">아가파오교회</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/김준영 대표.jpg" alt="김준영 대표" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">김준영 대표</span>
+                        <span class="text-[11px] text-slate-500">제이어스</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/정이호 목사님.jpg" alt="정이호 목사" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">정이호 목사</span>
+                        <span class="text-[11px] text-slate-500">빌라델비아 교회</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/이창호 목사님.png" alt="이창호 목사" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">이창호 목사</span>
+                        <span class="text-[11px] text-slate-500">넘치는 교회</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/노규석 목사님.jpeg" alt="노규석 목사" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">노규석 목사</span>
+                        <span class="text-[11px] text-slate-500">한동대 교목실장</span>
+                    </div>
+                </div>
+
+                <div id="worship" class="speaker-tab-content hidden flex grid grid-cols-2 gap-4">
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/아가파오.jpeg" alt="아가파오" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">아가파오</span>
+                        <span class="text-[11px] text-center text-slate-500">베드로의 고백, 비밀, <br />주님 무어라 말할까요</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/Holy United.jpeg" alt="Holy United" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">Holy United</span>
+                        <span class="text-[11px] text-slate-500">포항 연합 찬양팀</span>
+                    </div>
+
+                </div>
+
+                <div id="artist" class="speaker-tab-content hidden flex grid grid-cols-2 gap-4">
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/현지혜 간사.jpg" alt="현지혜 간사" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">현지혜 간사</span>
+                        <span class="text-[11px] text-center text-slate-500">제이어스</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/멘토.jpeg" alt="mentor" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">Mentor Crew</span>
+                        <span class="text-[11px] text-slate-500">Street Dance & B-boy</span>
+                    </div>
+                </div>
+
+                <div id="special"
+                    class="speaker-tab-content hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 scrollbar-none">
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/박성진 총장.jpg" alt="박성진 총장" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">박성진 총장</span>
+                        <span class="text-[11px] text-slate-500">한동대학교 총장</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/김중식 목사님.jpeg" alt="김중식 목사" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">김중식 목사</span>
+                        <span class="text-[11px] text-slate-500">포항 중앙침례교회</span>
+                    </div>
+                    <div class="speaker-unit">
+                        <div class="speaker-img">
+                            <img src="./img/김영걸 목사님.jpg" alt="김영걸 목사" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-slate-900">김영걸 목사</span>
+                        <span class="text-[11px] text-slate-500">포항 동부교회</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
 
         <!-- Program Section -->
         <section id="program" class="scroll-mt-16 space-y-4">
-            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <i data-lucide="clock" class="w-5 h-5 text-[#6a0607]"></i>
-                타임테이블
+            <h2 class="n-heading">
+                <span class="accent"> SCHEDULE</span>
+                일정
             </h2>
 
-            <div class="bg-white p-4  border border-slate-100 shadow-sm">
+            <div class="block">
                 <!-- Day Tabs -->
-                <div class="flex bg-slate-100 p-1  mb-4">
+                <div class="n-seg">
                     <button class="tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all active"
-                        data-day="day1">2/17 (수)</button>
+                        data-day="day1">WED 17</button>
                     <button class="tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
-                        data-day="day2">2/18 (목)</button>
+                        data-day="day2">THU 18</button>
                     <button class="tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
-                        data-day="day3">2/19 (금)</button>
+                        data-day="day3">FRI 19</button>
                 </div>
 
                 <!-- Timetable Content -->
@@ -434,7 +548,7 @@
                 <i data-lucide="home" class="w-5 h-5"></i>
                 <span class="text-[10px] font-medium">홈</span>
             </a>
-            <a href="#notice"
+            <a href="#speakers"
                 class="nav-item flex flex-col items-center gap-0.5 text-slate-500 hover:text-rose-600 transition-colors">
                 <i data-lucide="info" class="w-5 h-5"></i>
                 <span class="text-[10px] font-medium">안내</span>
