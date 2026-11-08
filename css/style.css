@@ -34,6 +34,14 @@ html {
 
 }
 
+.pc-nav {
+    transition: all 0.2s ease-in-out;
+}
+
+.pc-nav:hover {
+    color: rgba(158, 106, 106, 0.822)
+}
+
 .hero-info {
     flex: 1;
     min-width: 0;
@@ -123,6 +131,38 @@ html {
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
+.speaker-tab-btn {
+    flex: 1;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6a0607;
+    background: #ffffff;
+    border-right: 1.5px solid #6a0607;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.speaker-tab-btn.last {
+    flex: 1;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6a0607;
+    background: #ffffff;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.speaker-tab-btn.active {
+    background-color: #6a0607;
+    color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
 /* timetable */
 .n-heading {
     font-family: var(--font);
@@ -161,11 +201,23 @@ html {
     font-weight: 700;
     color: #6a0607;
     background: #ffffff;
-
+    border-right: 1.5px solid #6a0607;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
+.tab-btn.last {
+    flex: 1;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6a0607;
+    background: #ffffff;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
 
 .tab-btn.active {
     background-color: #6a0607;

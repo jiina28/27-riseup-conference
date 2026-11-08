@@ -19,7 +19,7 @@ function updateCountdown() {
         daysEl.textContent = '00';
         hoursEl.textContent = '00';
         minsEl.textContent = '00';
-        if (labelEl) labelEl.textContent = '수련회가 은혜리에 진행 중입니다! 🔥';
+        if (labelEl) labelEl.textContent = '수련회가 진행 중입니다! 🔥';
         return;
     }
 
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
             html += `
             <div class="flex items-start gap-3 p-2.5 rounded-lg border transition-all ${isHighlight
                     ? 'bg-[#451919] border-[#451919] text-white shadow-sm'
-                    : 'bg-slate-50 border-slate-100 text-slate-800'
+                    : 'bg-slate-50 border-slate-200 text-slate-800'
                 }">
                 <!-- 시간 뱃지 -->
                 <span class="text-xs font-bold px-2 py-0.5 rounded shrink-0 ${isHighlight ? 'bg-white text-[#6a0607]' : 'bg-white text-[#6a0607] border border-slate-200'

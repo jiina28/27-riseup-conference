@@ -28,6 +28,20 @@
 </head>
 
 <body class="bg-white text-slate-800 antialiased font-sans pb-24">
+    <!--pc 상단 네비게이션-->
+    <header
+        class="hidden md:flex fixed top-0 left-0 right-0 z-50 bg-transparent h-20 items-center justify-end px-12 transition-all duration-300">
+        <nav class="flex items-center gap-10 text-sm font-bold text-white drop-shadow-md">
+            <a href="#hero" class="pc-nav">홈</a>
+            <a href="#speakers" class="pc-nav">섬기는 이</a>
+            <a href="#program" class="pc-nav">일정</a>
+            <a href="#notice" class="pc-nav">등록 안내</a>
+            <a href="#register" class="pc-nav">참가 신청</a>
+            <a href="#map" class="pc-nav">오시는 길</a>
+            <a href="#faq" class="pc-nav">FAQ</a>
+        </nav>
+    </header>
+    <!-- 모바일 헤더 -->
     <header
         class="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-black/60 to-transparent transition-all duration-300">
         <div class=" mx-auto px-4 h-14 flex items-center justify-between">
@@ -39,7 +53,7 @@
 
     <!--Hero Section-->
     <section id="hero"
-        class="relative bg-cover bg-center bg-no-repeat text-white px-5 pt-10 pb-14 overflow-hidden bg-[url('./img/background.png')]">
+        class="relative bg-cover bg-center bg-no-repeat text-white px-5 pt-24 pb-14 overflow-hidden bg-[url('./img/background.png')]">
         <div class="absolute inset-0 bg-black/40 backdrop-brightness-95 pointer-events-none"></div>
         <div class="backdrop-blur-md px-3 py-3 text-right shrink-0 shadow-inner ">
             <p class="countdown-label" id="cd-label">D-Day까지</p>
@@ -80,7 +94,6 @@
 
 
     <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
-        <!-- Speaker / Leader Section -->
         <section id="speakers" class="scroll-mt-16 space-y-4">
             <h2 class="n-heading">
                 <span class="accent">LINE UP</span>
@@ -88,17 +101,11 @@
             </h2>
 
             <div class="block">
-                <!-- Category Toggle Tabs -->
                 <div class="n-seg">
-                    <button
-                        class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold transition-all active bg-[#6a0607] text-white shadow-sm"
-                        data-target="messenger">Messenger</button>
-                    <button class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
-                        data-target="worship">Worship</button>
-                    <button class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
-                        data-target="artist">Artist</button>
-                    <button class="speaker-tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
-                        data-target="special">Special</button>
+                    <button class="speaker-tab-btn active" data-target="messenger">Messenger</button>
+                    <button class="speaker-tab-btn" data-target="worship">Worship</button>
+                    <button class="speaker-tab-btn" data-target="artist">Artist</button>
+                    <button class="speaker-tab-btn last" data-target="special">Special</button>
                 </div>
 
                 <div id="messenger"
@@ -214,12 +221,9 @@
             <div class="block">
                 <!-- Day Tabs -->
                 <div class="n-seg">
-                    <button class="tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all active"
-                        data-day="day1">WED 17</button>
-                    <button class="tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
-                        data-day="day2">THU 18</button>
-                    <button class="tab-btn flex-1 py-1.5 text-xs font-bold text-slate-500 transition-all"
-                        data-day="day3">FRI 19</button>
+                    <button class="tab-btn active" data-day="day1">WED 17</button>
+                    <button class="tab-btn" data-day="day2">THU 18</button>
+                    <button class="tab-btn last" data-day="day3">FRI 19</button>
                 </div>
 
                 <!-- Timetable Content -->
@@ -541,7 +545,7 @@
 
     <!-- 모바일 하단 고정 네비게이션 바 -->
     <nav
-        class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200/80 z-50 px-6 py-2 shadow-lg">
+        class="block md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200/80 z-50 px-6 py-2 shadow-lg">
         <div class="max-w-md mx-auto flex items-center justify-between">
             <a href="#hero"
                 class="nav-item flex flex-col items-center gap-0.5 text-slate-500 hover:text-rose-600 transition-colors">
