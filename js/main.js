@@ -37,35 +37,52 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// 강사 섹션 탭 전환 로직
-const speakerTabBtns = document.querySelectorAll('.speaker-tab-btn');
-const speakerTabContents = document.querySelectorAll('.speaker-tab-content');
+document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.getElementById("speaker-slider");
+    const tabs = document.querySelectorAll(".speaker-tab-btn");
+    const panels = document.querySelectorAll(".speaker-slide-panel");
 
-speakerTabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target');
+    if (!slider || tabs.length === 0) return;
 
-        // 모든 버튼 활성화 상태 해제
-        speakerTabBtns.forEach(b => {
-            b.classList.remove('active', 'bg-white', 'text-[#6a0607]', 'shadow-sm');
-            b.classList.add('text-slate-500');
-        });
+    // 1. 탭 클릭 시 해당하는 패널로 부드럽게 스크롤
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const targetId = tab.getAttribute("data-target");
+            const targetPanel = document.getElementById(targetId);
 
-        // 클릭된 버튼 활성화
-        btn.classList.add('active', 'bg-white', 'text-[#6a0607]', 'shadow-sm');
-        btn.classList.remove('text-slate-500');
-
-        // 모든 컨텐츠 숨기기 및 선택된 컨텐츠만 표시
-        speakerTabContents.forEach(content => {
-            if (content.id === targetId) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
+            if (targetPanel) {
+                slider.scrollTo({
+                    left: targetPanel.offsetLeft,
+                    behavior: "smooth"
+                });
             }
         });
     });
-});
 
+    // 2. 좌우 스와이프 시 활성 탭 자동 변경 (IntersectionObserver 사용)
+    const observerOptions = {
+        root: slider,
+        threshold: 0.6 // 패널이 60% 이상 보일 때 탭 전환
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const activeId = entry.target.id;
+
+                tabs.forEach((tab) => {
+                    if (tab.getAttribute("data-target") === activeId) {
+                        tab.classList.add("active");
+                    } else {
+                        tab.classList.remove("active");
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    panels.forEach((panel) => observer.observe(panel));
+});
 
 // 타임테이블 데이터 구조 정의
 const timetableData = {

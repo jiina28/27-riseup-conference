@@ -94,116 +94,126 @@
 
 
     <main class="max-w-md mx-auto px-4 space-y-10 mt-6">
-        <section id="speakers" class="scroll-mt-16 space-y-4">
+        <!-- Speaker section -->
+        <section id="speakers" class="scroll-mt-24 space-y-4">
             <h2 class="n-heading">
                 <span class="accent">LINE UP</span>
                 섬기는 이
             </h2>
 
             <div class="block">
+                <!-- Category Toggle Tabs -->
                 <div class="n-seg">
-                    <button class="speaker-tab-btn active" data-target="messenger">Messenger</button>
-                    <button class="speaker-tab-btn" data-target="worship">Worship</button>
-                    <button class="speaker-tab-btn" data-target="artist">Artist</button>
-                    <button class="speaker-tab-btn last" data-target="special">Special</button>
+                    <button class="speaker-tab-btn active text-xs md:text-sm py-2"
+                        data-target="messenger">Messenger</button>
+                    <button class="speaker-tab-btn text-xs md:text-sm py-2" data-target="worship">Worship</button>
+                    <button class="speaker-tab-btn text-xs md:text-sm py-2" data-target="artist">Artist</button>
+                    <button class="speaker-tab-btn last text-xs md:text-sm py-2" data-target="special">Special</button>
                 </div>
 
-                <div id="messenger"
-                    class="speaker-tab-content flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 scrollbar-none">
-                    <div class="speaker-unit">
-                        <div class="speaker-img ">
-                            <img src="./img/김무열 목사님.png" alt="김무열 목사" class="w-full h-full object-cover">
+                <div id="speaker-slider"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth">
+                    <div id="messenger"
+                        class="speaker-slide-panel w-full flex-shrink-0 snap-start flex gap-4 py-2 pr-6 overflow-x-auto scrollbar-none">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/김무열 목사님.png" alt="김무열 목사" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">김무열 목사</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">아가파오교회</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">김무열 목사</span>
-                        <span class="text-[11px] text-slate-500">아가파오교회</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/김준영 대표.jpg" alt="김준영 대표" class="w-full h-full object-cover">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/김준영 대표.jpg" alt="김준영 대표" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">김준영 대표</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">제이어스</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">김준영 대표</span>
-                        <span class="text-[11px] text-slate-500">제이어스</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/정이호 목사님.jpg" alt="정이호 목사" class="w-full h-full object-cover">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/정이호 목사님.jpg" alt="정이호 목사" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">정이호 목사</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">빌라델비아 교회</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">정이호 목사</span>
-                        <span class="text-[11px] text-slate-500">빌라델비아 교회</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/이창호 목사님.png" alt="이창호 목사" class="w-full h-full object-cover">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/이창호 목사님.png" alt="이창호 목사" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">이창호 목사</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">넘치는 교회</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">이창호 목사</span>
-                        <span class="text-[11px] text-slate-500">넘치는 교회</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/노규석 목사님.jpeg" alt="노규석 목사" class="w-full h-full object-cover">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/노규석 목사님.jpeg" alt="노규석 목사" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">노규석 목사</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">한동대 교목실장</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">노규석 목사</span>
-                        <span class="text-[11px] text-slate-500">한동대 교목실장</span>
-                    </div>
-                </div>
-
-                <div id="worship" class="speaker-tab-content hidden flex grid grid-cols-2 gap-4">
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/아가파오.jpeg" alt="아가파오" class="w-full h-full object-cover">
-                        </div>
-                        <span class="text-xs font-bold text-slate-900">아가파오</span>
-                        <span class="text-[11px] text-center text-slate-500">베드로의 고백, 비밀, <br />주님 무어라 말할까요</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/Holy United.jpeg" alt="Holy United" class="w-full h-full object-cover">
-                        </div>
-                        <span class="text-xs font-bold text-slate-900">Holy United</span>
-                        <span class="text-[11px] text-slate-500">포항 연합 찬양팀</span>
                     </div>
 
-                </div>
+                    <div id="worship"
+                        class="speaker-slide-panel w-full flex-shrink-0 snap-start flex gap-4 py-2 pr-6 overflow-x-auto scrollbar-none">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/아가파오.jpeg" alt="아가파오" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">아가파오</span>
+                            <span class="text-[11px] md:text-xs text-center text-slate-500">베드로의 고백, 비밀, <br />주님 무어라
+                                말할까요</span>
+                        </div>
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/Holy United.jpeg" alt="Holy United" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">Holy United</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">포항 연합 찬양팀</span>
+                        </div>
+                    </div>
 
-                <div id="artist" class="speaker-tab-content hidden flex grid grid-cols-2 gap-4">
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/현지혜 간사.jpg" alt="현지혜 간사" class="w-full h-full object-cover">
+                    <!-- 3. Artist -->
+                    <div id="artist"
+                        class="speaker-slide-panel w-full flex-shrink-0 snap-start flex gap-4 py-2 pr-6 overflow-x-auto scrollbar-none">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/현지혜 간사.jpg" alt="현지혜 간사" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">현지혜 간사</span>
+                            <span class="text-[11px] md:text-xs text-center text-slate-500">제이어스</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">현지혜 간사</span>
-                        <span class="text-[11px] text-center text-slate-500">제이어스</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/멘토.jpeg" alt="mentor" class="w-full h-full object-cover">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/멘토.jpeg" alt="mentor" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">Mentor Crew</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">Street Dance & B-boy</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">Mentor Crew</span>
-                        <span class="text-[11px] text-slate-500">Street Dance & B-boy</span>
                     </div>
-                </div>
 
-                <div id="special"
-                    class="speaker-tab-content hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 scrollbar-none">
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/박성진 총장.jpg" alt="박성진 총장" class="w-full h-full object-cover">
+                    <!-- 4. Special -->
+                    <div id="special"
+                        class="speaker-slide-panel w-full flex-shrink-0 snap-start flex gap-4 py-2 pr-6 overflow-x-auto scrollbar-none">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/박성진 총장.jpg" alt="박성진 총장" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">박성진 총장</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">한동대학교 총장</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">박성진 총장</span>
-                        <span class="text-[11px] text-slate-500">한동대학교 총장</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/김중식 목사님.jpeg" alt="김중식 목사" class="w-full h-full object-cover">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/김중식 목사님.jpeg" alt="김중식 목사" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">김중식 목사</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">포항 중앙침례교회</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">김중식 목사</span>
-                        <span class="text-[11px] text-slate-500">포항 중앙침례교회</span>
-                    </div>
-                    <div class="speaker-unit">
-                        <div class="speaker-img">
-                            <img src="./img/김영걸 목사님.jpg" alt="김영걸 목사" class="w-full h-full object-cover">
+                        <div class="speaker-unit shrink-0">
+                            <div class="speaker-img">
+                                <img src="./img/김영걸 목사님.jpg" alt="김영걸 목사" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-900">김영걸 목사</span>
+                            <span class="text-[11px] md:text-xs text-slate-500">포항 동부교회</span>
                         </div>
-                        <span class="text-xs font-bold text-slate-900">김영걸 목사</span>
-                        <span class="text-[11px] text-slate-500">포항 동부교회</span>
                     </div>
 
                 </div>
