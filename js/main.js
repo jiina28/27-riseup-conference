@@ -1,5 +1,34 @@
 // js/main.js
 
+document.addEventListener("DOMContentLoaded", () => {
+    const pcHeader = document.querySelector("header.pc-header");
+    const speakersSection = document.getElementById("speakers");
+
+    if (pcHeader && speakersSection) {
+        const handleHeaderBackground = () => {
+            // speakers 섹션의 상단 위치와 현재 스크롤 위치 비교
+            const speakersRect = speakersSection.getBoundingClientRect();
+
+            // 헤더 높이(약 80px)를 고려하여 speakers 섹션이 화면 상단에 도달했을 때 감지
+            if (speakersRect.top <= 200) {
+                // 스크롤이 speakers 섹션에 도달했거나 지났을 때: 검은색 배경 + 블러
+                pcHeader.classList.remove("bg-transparent");
+                pcHeader.classList.add("bg-black/90", "backdrop-blur-md", "shadow-lg");
+            } else {
+                // 다시 위로 올라와서 Hero section에 있을 때: 투명 배경 복원
+                pcHeader.classList.remove("bg-black/90", "backdrop-blur-md", "shadow-lg");
+                pcHeader.classList.add("bg-transparent");
+            }
+        };
+
+        // 스크롤 이벤트 리스너 등록
+        window.addEventListener("scroll", handleHeaderBackground);
+
+        // 페이지 로드 시 초기 위치 한 번 체크
+        handleHeaderBackground();
+    }
+});
+
 // D-Day 실시간 카운트다운 기능
 function updateCountdown() {
     // 수련회 시작 일시: 2027년 2월 17일 00:00:00
@@ -415,6 +444,66 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.disabled = false;
             btn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i> ${formData.type} 참가 신청하기`;
             lucide.createIcons();
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 💡 FAQ 컨텐츠 데이터 (여기에 질문과 답변을 추가/수정하면 됩니다)
+    const faqData = [
+        {
+            q: "부분 참석도 가능한가요?",
+            a: "네 가능합니다. 단, 사전접수는 불가능하며 현장접수 부탁드립니다. (일일등록비: 5만원)"
+        },
+        {
+            q: "간식을 챙겨가도 괜찮은가요?",
+            a: "본당 내에는 물과 간단한 사탕류 외에는 반입이 불가합니다. 카페 음료 및 외부 음식은 예배당 밖에서 취식해주시기 바랍니다."
+        },
+        {
+            q: "타지에서 참석합니다. 소개해주실 숙소가 있나요?",
+            a: "이요한 회장(010-5522-5391)에게 개별 문의 부탁드립니다."
+        },
+        {
+            q: "분실물을 발견했거나 물건을 잃어버렸을 때 어떻게 해야 하나요?",
+            a: "1층 메인 로비에 위치한 '종합 안내 및 분실물 센터'로 방문해 주시면 확인 도와드리겠습니다."
+        },
+        {
+            q: "의료부스는 어디에 위치해 있나요?",
+            a: "응급 상황 발생 시 대처할 수 있는 의료부스는 1층 로비 안내 데스크 옆에 상시 운영됩니다."
+        }
+    ];
+
+    const faqListContainer = document.getElementById("faq-list");
+
+    if (faqListContainer) {
+        faqListContainer.innerHTML = faqData.map(item => `
+            <div class="faq-card bg-slate-50 border border-slate-200/80 border-2xl overflow-hidden transition-all">
+                <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm md:text-base">
+                    <span>${item.q}</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-200 shrink-0"></i>
+                </button>
+                <div class="faq-content hidden px-6 pb-5 text-xs md:text-sm text-slate-600 leading-relaxed border-t border-slate-200/50 pt-4">
+                    ${item.a}
+                </div>
+            </div>
+        `).join('');
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const faqButtons = document.querySelectorAll(".faq-btn");
+        faqButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const card = btn.closest(".faq-card");
+                const content = card.querySelector(".faq-content");
+                const isOpen = !content.classList.contains("hidden");
+
+                content.classList.toggle("hidden", isOpen);
+                const svg = btn.querySelector("svg");
+                if (svg) {
+                    svg.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+                }
+            });
         });
     }
 });
